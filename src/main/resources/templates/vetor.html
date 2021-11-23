@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Vetor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        header{
+            width: 100%;
+            min-height: 15px;
+            background: linear-gradient(90deg, rgba(99,8,149,0.9864320728291317) 0%, rgba(45,150,70,1) 89%, rgba(38,122,49,1) 100%);
+        }
+
+        h1{
+            color: azure;
+            font-family: cursive;
+        }
+
+        main{
+            margin: 10% auto 0 auto;
+            text-align: center;
+            width: 400px;
+            padding: 2%;
+            background-color: rgb(224, 222, 222);
+            border-radius: 5%;
+        }
+
+        .box-full{
+            margin-bottom: 10%;
+        }
+
+        footer{
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(90deg, rgba(99,8,149,0.9864320728291317) 0%, rgba(45,150,70,1) 89%, rgba(38,122,49,1) 100%);
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed-top">
+        <H1>Cálculo de Vetor</H1>
+    </header>
+    <main>
+        <form action="/calcular" method="POST">
+            <div class="box-full">
+                <label for="numero" class="form-label">Número</label>
+                <input type="number" id="numero" class="form-control" aria-describedby="passwordHelpBlock" name="numero" value="0">
+                <div id="passwordHelpBlock" class="form-text">
+                    Informe um número, múltiplo de 10 entre 100 e 1000.
+                </div>
+            </div>
+            <div class="box-full">
+                <select class="form-select" aria-label="Default select example" name="opcao">
+                    <option value="1">Calcular pelas posições IMPARES do vetor</option>
+                    <option value="2">Calcular pelas posições PARES do vetor</option>
+                </select>
+            </div>
+            <div class="box-full">
+                <button type="submit" class="btn btn-outline-primary">Calcular</button>
+            </div>
+        </form>    
+            <div class="box-full">
+            <span th:text="${resultado}">0</span>
+                
+            </div>
+        
+    </main>
+    <footer class="fixed-bottom"></footer>
+</body>
+</html>
